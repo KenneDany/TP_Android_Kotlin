@@ -15,7 +15,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.testapp1.ui.theme.TestApp1Theme
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 
@@ -29,14 +35,14 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingImage(message = "Happy Birthday Sam!", from = "From Emma")
+                    GreetingImage(message = "Happy Birthday Dany!", from = "From Kenne")
 
                 }
 
             }
     }
 }
-
+    /**/
     @Composable
     fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
         Column(
@@ -52,21 +58,25 @@ class MainActivity : ComponentActivity() {
             )
             Text(
                 text = from,
-                fontSize = 36.sp
+                fontSize = 36.sp,
+                        modifier = Modifier
+                        .padding(16.dp)
+                        .align(alignment = Alignment.End)
+
             )
-
-
-
         }
     }
 
+    //premier page
     @Composable
     fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {
         val image = painterResource(R.drawable.androidparty)
         Box(modifier) {
             Image(
                 painter = image,
-                contentDescription = null
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                alpha = 0.5F
             )
 
             GreetingText(
@@ -82,16 +92,41 @@ class MainActivity : ComponentActivity() {
 
     }
 
+    //deuxieme page : Article sur Compose
+    @Composable
+    fun Article(  modifier: Modifier=Modifier){
+        Column(modifier) {
+
+            Image(
+                painter = painterResource(R.drawable.bg_compose_background),
+                contentDescription = null,
+                contentScale = ContentScale.Fit
+            )
+
+            Text(text = stringResource(R.string.title),
+                fontSize = 30.sp, modifier = modifier.padding(16.dp),
+                fontWeight = FontWeight.Bold
+            )
+            Text(text = stringResource(R.string.description) ,
+                fontSize = 24.sp, modifier = modifier.padding(16.dp), textAlign = TextAlign.Justify
+            )
+            Text(text =  stringResource(R.string.description_content),
+                fontSize = 24.sp, modifier = modifier.padding(16.dp), textAlign = TextAlign.Justify
+            )
+        }
+    }
 
 
     @Preview(showBackground = true, name = "phone", showSystemUi = true)
-@Composable
-fun BirthdayCardPreview() {
+    @Composable
+    fun BirthdayCardPreview() {
     TestApp1Theme {
         GreetingImage(
             message = "Happy Birthday Sam!",
             from = "From Emma"
         )
+
+        //Article()
     }
     }
 }
