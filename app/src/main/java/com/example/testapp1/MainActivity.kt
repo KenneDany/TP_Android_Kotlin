@@ -1,5 +1,6 @@
 package com.example.testapp1
 
+import android.media.Image
 import android.os.Bundle
 import android.os.Message
 import androidx.activity.ComponentActivity
@@ -17,9 +18,15 @@ import com.example.testapp1.ui.theme.TestApp1Theme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Email
+import androidx.compose.material.icons.rounded.Phone
+import androidx.compose.material.icons.rounded.Share
+import androidx.compose.material3.Icon
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -157,6 +164,112 @@ class MainActivity : ComponentActivity() {
                 textAlign = TextAlign.Justify,
 
                 )
+        }
+    }
+
+    //Cinqieme page : quadrant
+    @Composable
+    fun QuadrantCompose(modifier: Modifier=Modifier){
+        Column(modifier.fillMaxSize()) {
+            Row(modifier.weight(1f)) {
+                componentColumn(
+                    title = stringResource(R.string.quandrantTitleColumn1),
+                    content = stringResource(R.string.quandrantContentColumn1),
+                    backgroundColumn = Color(0xFFEADDFF),
+                    modifier = Modifier.weight(1f)
+                )
+                componentColumn(
+                    title = stringResource(R.string.quandrantTitleColumn2),
+                    content = stringResource(R.string.quandrantContentColumn2),
+                    backgroundColumn = Color(0xFFD0BCFF),
+                    modifier = Modifier.weight(1f)
+                )
+            }
+            Row(modifier.weight(1f) ) {
+                componentColumn(
+                    title = stringResource(R.string.quandrantTitleColumn1),
+                    content = stringResource(R.string.quandrantContentColumn1),
+                    backgroundColumn = Color(0xFFB69DF8),
+                    modifier = Modifier.weight(1f)
+                )
+                componentColumn(
+                    title = stringResource(R.string.quandrantTitleColumn2),
+                    content = stringResource(R.string.quandrantContentColumn2),
+                    backgroundColumn = Color(0xFFF6EDFF),
+                    modifier = Modifier.weight(1f)
+                )
+            }
+        }
+    }
+
+    @Composable
+    fun contactFooter(icon : Image, text : String, modifier: Modifier=Modifier){
+        Row(modifier) {
+
+        }
+    }
+
+    //Sixieme page
+    @Composable
+    fun carteVisite(modifier: Modifier=Modifier){
+
+        val configuration = LocalConfiguration.current
+        val screenWidth = configuration.screenWidthDp // Largeur en dp
+        val screenHeight = configuration.screenHeightDp
+
+        Column(modifier.background(Color(0xFF75d2ac))) {
+            Row(modifier = Modifier
+                .height((screenHeight * 0.7).dp) ) {
+                Column(modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally) {
+                    Box(
+                        modifier
+                            .width(100.dp)
+                            .height(100.dp)
+                            .background(Color(0xFF110047))
+                    ) {
+                        Image(
+                            painter = painterResource(R.drawable.android_logo),
+                            contentDescription = null,
+                            contentScale = ContentScale.Fit,
+                        )
+                    }
+                    Text(text = stringResource(R.string.carteTitle) ,
+                        fontSize = 40.sp, fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                    )
+
+                    Text(text = stringResource(R.string.carteContent) ,
+                        fontSize = 15.sp, fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        color = Color(0xFF118200)
+                    )
+                }
+            }
+            Row(modifier = Modifier
+                .height((screenHeight * 0.3).dp) ) {
+                Column(modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+                    Row(
+                        modifier
+                            .padding(0.dp, 0.dp, 0.dp, 20.dp)
+                            .fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
+                        Icon(
+                            Icons.Rounded.Phone, contentDescription = "Localized description",
+                            modifier=modifier.padding(0.dp, 0.dp, 20.dp, 0.dp))
+                        Text(text = "+11 (123) 444 555 666")
+                    }
+                    Row(modifier.padding(0.dp, 0.dp, 0.dp, 20.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
+                        Icon(Icons.Rounded.Share, contentDescription = "Localized description",
+                            modifier=modifier.padding(0.dp, 0.dp, 20.dp, 0.dp))
+                        Text(text = "https://github.com/KenneDany")
+                    }
+                    Row(modifier.padding(0.dp, 0.dp, 0.dp, 20.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
+                        Icon(Icons.Rounded.Email, contentDescription = "Localized description",
+                            modifier=modifier.padding(0.dp, 0.dp, 20.dp, 0.dp))
+                        Text(text = "kennedany4@gmail.com")
+                    }
+                }
+            }
         }
     }
 
