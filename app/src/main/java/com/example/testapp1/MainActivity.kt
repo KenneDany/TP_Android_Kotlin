@@ -103,7 +103,7 @@ class MainActivity : ComponentActivity() {
                 contentScale = ContentScale.Fit
             )
 
-            Text(text = stringResource(R.string.title),
+            Text(text = stringResource(R.string.title1),
                 fontSize = 30.sp, modifier = modifier.padding(16.dp),
                 fontWeight = FontWeight.Bold
             )
@@ -116,6 +116,50 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    //troisime page : TodoList
+    @Composable
+    fun ToDoList(modifier: Modifier=Modifier){
+
+        Column(modifier.padding(45.dp, 100.dp, 45.dp, 100.dp), verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                painter = painterResource(R.drawable.ic_task_completed),
+                contentDescription = null,
+                contentScale = ContentScale.Fit,
+            )
+            Text(text = stringResource(R.string.todoTitle) ,
+                fontSize = 24.sp, fontWeight = FontWeight.Bold,
+                modifier = modifier.padding(0.dp, 16.dp, 0.dp, 16.dp)
+            )
+            Text(text =  stringResource(R.string.todoContent),
+                fontSize = 16.sp, modifier = modifier.padding(16.dp)
+            )
+        }
+    }
+
+    //quatrieme page : ComponentColumn
+    @Composable
+    fun componentColumn(title : String, content : String, backgroundColumn : Color, modifier: Modifier=Modifier){
+        Column(
+            modifier
+                .background(backgroundColumn)
+                .padding(8.dp)
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+
+            ) {
+            Text(text = title,
+                fontSize = 24.sp, fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center,
+            )
+            Text(text = content,
+                fontSize = 24.sp,
+                textAlign = TextAlign.Justify,
+
+                )
+        }
+    }
+
 
     @Preview(showBackground = true, name = "phone", showSystemUi = true)
     @Composable
@@ -125,8 +169,7 @@ class MainActivity : ComponentActivity() {
             message = "Happy Birthday Sam!",
             from = "From Emma"
         )
-
-        //Article()
+        Article()
     }
     }
 }

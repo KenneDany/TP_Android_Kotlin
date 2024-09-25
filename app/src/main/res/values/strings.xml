@@ -1,5 +1,52 @@
 <resources>
-    <string name="title">TestApp1</string>
-    <string name="description">Jetpack Compose is a modern toolkit for building native Android UI. Compose simplifies and accelerates UI development on Android with less code, powerful tools, and intuitive Kotlin APIs.</string>
-    <string name="description_content">In this tutorial, you build a simple UI component with declarative functions. You call Compose functions to say what elements you want and the Compose compiler does the rest. Compose is built around Composable functions. These functions let you define your app\'s UI programmatically because they let you describe how it should look and provide data dependencies, rather than focus on the process of the UI\'s construction, such as initializing an element and then attaching it to a parent. To create a Composable function, you add the @Composable annotation to the function name.</string>
+    <string name="title1">TestApp1</string>
+    <string name="description">Jetpack Compose is a modern toolkit for building native Android UI.
+                                Compose simplifies and accelerates UI development on Android with less code, powerful tools,
+                                and intuitive Kotlin APIs.
+    </string>
+    <string name="description_content">In this tutorial, you build a simple UI component with declarative functions.
+                                       You call Compose functions to say what elements you want and the Compose compiler does the rest.
+                                       Compose is built around Composable functions. These functions let you define your app\'s
+                                       UI programmatically because they let you describe how it should look and provide data dependencies,
+                                       rather than focus on the process of the UI\'s construction, such as initializing an element and then
+                                       attaching it to a parent. To create a Composable function, you add the @Composable annotation to the
+                                        function name.
+    </string>
+    <string name="title2">
+        Jetpack Compose tutorial
+    </string>
+    <string name="todoTitle">
+        All tasks completed
+    </string>
+    <string name="todoContent">
+        Nice work!
+    </string>
+
+    <string name="quandrantTitleColumn1">
+        Text composable
+    </string>
+
+    <string name="quandrantContentColumn1">
+        Displays text and follows the recommended Material Design guidelines.
+    </string>
+    <string name="quandrantTitleColumn2">
+        Image composable
+    </string>
+    <string name="quandrantContentColumn2">
+        Creates a composable that lays out and draws a given Painter class object
+    </string>
+
+
+    <string name="carteTitle">
+        Jennifer Doe
+    </string>
+
+    <string name="carteContent">
+        Android Developer Extraordinaire
+    </string>
+
+    <string name="roll">
+        Roll
+    </string>
+
 </resources>
