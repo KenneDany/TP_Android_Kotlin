@@ -1,14 +1,11 @@
 package com.example.testapp1
 
+import android.annotation.SuppressLint
 import android.media.Image
 import android.os.Bundle
 import android.os.Message
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -18,18 +15,24 @@ import com.example.testapp1.ui.theme.TestApp1Theme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Email
 import androidx.compose.material.icons.rounded.Phone
 import androidx.compose.material.icons.rounded.Share
-import androidx.compose.material3.Icon
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import java.text.NumberFormat
 
 
 class MainActivity : ComponentActivity() {
@@ -42,8 +45,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingImage(message = "Happy Birthday Dany!", from = "From Kenne")
-
+                    DiceWithButtonAndImage()
                 }
 
             }
@@ -273,16 +275,42 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-
-    @Preview(showBackground = true, name = "phone", showSystemUi = true)
     @Composable
-    fun BirthdayCardPreview() {
-    TestApp1Theme {
-        GreetingImage(
-            message = "Happy Birthday Sam!",
-            from = "From Emma"
-        )
-        Article()
+    fun TipTimeLayout() {
+
     }
+
+
+
+    //derniere page : Dice
+    @Composable
+    fun DiceWithButtonAndImage(modifier : Modifier = Modifier){
+        var result by remember { mutableStateOf(1) }
+        val imageResource = when (result){
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+        Column(modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                painter = painterResource(imageResource),
+                contentDescription = result.toString()
+            )
+            Spacer(modifier.height(16.dp))
+
+            Button( onClick = { result = (1..6).random()}) {
+                Text(text = stringResource(R.string.roll))
+            }
+        }
     }
+
+    @Preview
+    @Composable
+    fun DiceRollerApp() {
+
+    }
+
 }
