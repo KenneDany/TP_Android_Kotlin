@@ -61,7 +61,7 @@ class MainActivity : ComponentActivity() {
             }
     }
 }
-    /**/
+    /*Atelier 1 : jour 2*/
     @Composable
     fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
         Column(
@@ -86,7 +86,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    //premier page
+    //Atelier 1 : jour 2
     @Composable
     fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {
         val image = painterResource(R.drawable.androidparty)
@@ -111,7 +111,7 @@ class MainActivity : ComponentActivity() {
 
     }
 
-    //deuxieme page : Article sur Compose
+    // Atelier 2 : jours 3
     @Composable
     fun Article(  modifier: Modifier=Modifier){
         Column(modifier) {
@@ -135,7 +135,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    //troisime page : TodoList
+    //Devoir
     @Composable
     fun ToDoList(modifier: Modifier=Modifier){
 
@@ -156,7 +156,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    //quatrieme page : ComponentColumn
+    //Atelier 3 jour 4
     @Composable
     fun componentColumn(title : String, content : String, backgroundColumn : Color, modifier: Modifier=Modifier){
         Column(
@@ -179,7 +179,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    //Cinqieme page : quadrant
+    //Devoir
     @Composable
     fun QuadrantCompose(modifier: Modifier=Modifier){
         Column(modifier.fillMaxSize()) {
@@ -213,7 +213,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
+     //Devoir
     @Composable
     fun contactFooter(icon : Image, text : String, modifier: Modifier=Modifier){
         Row(modifier) {
@@ -221,7 +221,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    //Sixieme page
+    //Atelier 4 : jour 5
     @Composable
     fun carteVisite(modifier: Modifier=Modifier){
 
@@ -286,7 +286,7 @@ class MainActivity : ComponentActivity() {
     }
 
 
-    //sixieme page : Dice
+    //Devoir
     @Composable
     fun DiceWithButtonAndImage(modifier : Modifier = Modifier){
         var result by remember { mutableStateOf(1) }
@@ -311,8 +311,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    //Cours 5
-    //Page 7 : Pourboire
+    //Atelier 5 : jour 6
     @Composable
     fun TipTimeLayout() {
         var amountInput by remember { mutableStateOf("") }
@@ -427,6 +426,10 @@ class MainActivity : ComponentActivity() {
     }
 
 
+    //Devoir
+    fun GalerieArtSpace(){
+
+    }
 
     @Preview
     @Composable
