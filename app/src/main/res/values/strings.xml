@@ -54,4 +54,30 @@
     <string name="how_was_the_service">Tip Percentage</string>
     <string name="round_up_tip">Round up tip?</string>
 
+    <string name="Pic1">Chilling</string>
+    <string name="Artist1">Dany</string>
+    <string name="Year1">2022</string>
+
+    <string name="Pic2">Distraction</string>
+    <string name="Artist2">GLO</string>
+    <string name="Year2">2023</string>
+
+    <string name="Pic3">Hard times at Intership</string>
+    <string name="Artist3">NOBISOFT</string>
+
+
+    <string name="Pic4">Break times at Intership</string>
+    <string name="Artist4">NOBISOFT</string>
+
+    <string name="Pic5">Paint Art</string>
+    <string name="Artist5">NOBISOFT</string>
+    <string name="Year4">1906</string>
+
+    <string name="Pic6">Having Fun</string>
+    <string name="Artist6">NOBISOFT</string>
+    <string name="Year5">2024</string>
+
+    <string name="btnN">Next</string>
+    <string name="btnP">Previous</string>
+
 </resources>
